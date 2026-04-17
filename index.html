@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJlb4afecb2d66581116f0b30d04af4ef42"/>
+<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJl8cc2fb2d8cf05cec1e521ffdf8e4bc07"/>
   <meta charset="utf-8">
   <meta name="generator" content="Google Web Designer 16.4.1.0219">
   <meta name="template" content="Banner 3.0.0">
@@ -160,7 +160,7 @@ set:function(a){this.g.height=a}},width:{configurable:!0,enumerable:!0,get:funct
 
         var qs = new URLSearchParams(window.location.search);
         var vioohAssetId = qs.get("viooh_asset_id");
-        // vioohAssetId = 'ATV49056633';
+        // vioohAssetId = 'ATV490566';
         //var infoElement = document.getElementById('info');
         //infoElement.innerHTML = '<p>Asset ID: ' + vioohAssetId + '</p>';        
 
@@ -226,12 +226,13 @@ set:function(a){this.g.height=a}},width:{configurable:!0,enumerable:!0,get:funct
               ifDynamic = true;
               console.log('Nearest Store:', nearestStore.name);
               // console.log('Text:', nearestStore.text);
-
+              const cleanRetailerName = nearestStore.name.replace(/\((.*?)\)/g, '$1').replace(/\s+/g, ' ').trim();
+              console.log('Clean Nearest Store:', cleanRetailerName);
               console.log('Distance:', minDistance.toFixed(2), 'km');
               //console.log('Walking Time: ', minTime.toFixed(2), ' minutes');
               const containerHeading = document.getElementById('retailername');
               //const containerStoreName = document.getElementById('retailername');
-              containerHeading.innerHTML = `<span style="font-family: VWHeadRegular;">Book your test drive at </span> <span style="font-family: VWHeadBold;">${nearestStore.name}.</span>`;
+              containerHeading.innerHTML = `<span style="font-family: VWHeadRegular;">Book your test drive at </span> <span style="font-family: VWHeadBold;">${cleanRetailerName}.</span>`;
               containerHeading.style.fontFamily = 'VWHeadRegular';
             }
           } else {
